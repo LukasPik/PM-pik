@@ -17,4 +17,12 @@ public class MedicineServiceImpl implements MedicineService {
     public List<Medicine> getAll() {
         return medicineRepository.findAll();
     }
+
+    @Override
+    public Medicine getById(long id) {  return medicineRepository.findOne(id); }
+
+    @Override
+    public Medicine addMedicine(Medicine medicine) {
+        return medicineRepository.save(medicine);
+    }
 }
